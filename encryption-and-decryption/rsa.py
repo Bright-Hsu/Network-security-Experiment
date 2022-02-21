@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Nov  1 19:32:34 2019
-
-@author: 90415
-"""
 
 from Crypto import Random
 from Crypto.Hash import SHA
@@ -47,7 +42,6 @@ with open('master-private.pem') as f:
     print ('解密的原文:',text)
 
 
-#%%
 n = b'This is a test message'   #要加密的信息
 h = SHA.new()   #SHA是安全哈希函数，实例化一个h对象
 h.update(n)     #对n进行哈希映射
