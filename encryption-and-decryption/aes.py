@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Nov  1 19:32:34 2019
 
-@author: 90415
-"""
 from Crypto.Cipher import AES
 from binascii import b2a_hex, a2b_hex
 
