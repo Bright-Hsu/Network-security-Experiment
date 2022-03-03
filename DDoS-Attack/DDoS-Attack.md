@@ -38,3 +38,28 @@ SYN泛洪攻击是一种比较常用的 Dos 方式之一。通过发送大量伪
 
 ![image-20220303215647988](https://gitee.com/bright_xu/blog-image/raw/master/img/image-20220303215647988.png)
 
+在Attacker的浏览器上，输入192.168.1.103，也能访问，说明配置成功。
+
+![image-20220303215726568](https://gitee.com/bright_xu/blog-image/raw/master/img/image-20220303215726568.png)
+
+### 4. 进行SYN-FLOOD攻击
+
+在攻击机上下载函数库，然后编写代码进行攻击，SYN_flood.py文件内容及注释如下。
+
+![image-20220303215802455](https://gitee.com/bright_xu/blog-image/raw/master/img/image-20220303215802455.png)
+
+运行py脚本，开始攻击：
+
+![image-20220303215829654](https://gitee.com/bright_xu/blog-image/raw/master/img/image-20220303215829654.png)
+
+在server上用wireshark进行观察，可以看到，客户端和服务器端 TCP 连接只握手了两次，都处于半开连接状态：
+
+![image-20220303215840118](https://gitee.com/bright_xu/blog-image/raw/master/img/image-20220303215840118.png)
+
+Server运行netstat –atn可以看到，出现了很多的SYN请求。
+
+![image-20220303215859106](https://gitee.com/bright_xu/blog-image/raw/master/img/image-20220303215859106.png)
+
+## 遇到的问题及其解决
+
+在两个虚拟机都使用NAT模式时，SYN攻击失败，客户端会在两次握手后，发送 TCP RST 断开 TCP 连接。在查阅资料后，发现改为桥接模式之后，问题便解决了，SYN攻击成功，但是其中原理还是尚未清楚。
