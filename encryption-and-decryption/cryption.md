@@ -26,8 +26,11 @@ ubuntu虚拟机，python3
 
 对称加密算法采用单钥密码系统的加密方法，同一个密钥可以同时用作信息的加密和解密。本次实验我们采用AES算法对字符串进行加密。
 
-首先在Python中安装加解密相关的库是Crypto，此前已经安装过pip，因此只需输入命令：pip3 install pycrypto
+首先在Python中安装加解密相关的库是Crypto，此前已经安装过pip，因此只需输入命令：`pip3 install pycrypto`
 
 AES 加密算法就是众多对称加密算法中的一种，它的英文全称是 Advanced Encryption Standard，翻译过来是高级加密标准，它是用来替代之前的 DES 加密算法的。AES 加密算法采用分组密码体制，每个分组数据的长度为128位16个字节，密钥长度可以是128位16个字节、192位或256位，一共有四种加密模式，我们通常采用需要初始向量 IV 的 CBC 模式，初始向量的长度也是128位16个字节。
 
 下面运行aes.py文件，可以看到加密过程如下：
+
+![image-20220327231532567](https://gitee.com/bright_xu/blog-image/raw/master/202203272315628.png)
+
