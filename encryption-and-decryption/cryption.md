@@ -81,3 +81,34 @@ encrypt函数在加密的过程中会修改iv的内容，因此iv参数不能是
   在RSA数字签名中，签名算法以私钥SK和待签名的消息M作为输入，输出签名![img](https://gitee.com/bright_xu/blog-image/raw/master/202203282117173.png)，签名![img](https://gitee.com/bright_xu/blog-image/raw/master/202203282117175.png)。验证算法以公钥PK，签名![img](file:///C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image014.png)以及消息M作为输入，输出一个比特值b。b=1意味着验证通过，b=0意味着验证不通过。在数字签名中，验证算法首先计算![img](C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image018.png)，随后对比M'与M，如果相等，则输出b=1，否则输出b=0。可以看出【私钥加密，公钥解密】是为了用私钥加密数据作为签名，然后将数据附带着签名一同发布出去。当别人用公钥解开数据时，就说明签名是我发的，私钥起到认证效果，证明我的身份。
 
 ### 3. 书写数字签名的注释，每行都干了些什么？并任意举一个例子使得result=False。
+
+```python
+n = b'This is a test message'   #要加密的信息
+h = SHA.new()   #SHA是安全哈希函数，实例化一个h对象
+h.update(n)     #对n进行哈希映射
+print('Hash:',h.hexdigest(),'length:',len(h.hexdigest())*4)    #打印16进制的字符串，并输出其长度
+
+sign_txt = 'sign.txt'  #用sign_txt表示签名文件
+
+with open('master-private.pem') as f:   #打开私钥文件
+    key = f.read()   #读取私钥
+    private_key = RSA.importKey(key)  #导入RSA私钥
+    hash_obj = SHA.new(n)   #实例化哈希对象
+    signer = Signature_pkcs1_v1_5.new(private_key)  #用私钥实例化一个signer签名者对象
+    d = base64.b64encode(signer.sign(hash_obj))  #使sign函数返回签名字符串，然后用Base64编码赋值给d
+
+f = open(sign_txt,'wb')   #打开sign.txt文件
+f.write(d)   #将d写入到文件中
+f.close()    #关闭文件
+
+with open('master-private.pem') as f:  #打开私钥文件
+    key = f.read()  #读取私钥
+    public_key = RSA.importKey(key) #导入RSA公钥
+    sign_file = open(sign_txt,'r')   #用sign_file 表示签名文件
+    sign = base64.b64decode(sign_file.read())   #用Base64解码签名字符串，赋值给sign
+    h = SHA.new(n)   #实例化哈希对象
+    verifier = Signature_pkcs1_v1_5.new(public_key)  #用公钥实例化一个verifier验证者对象
+    print('result:', verifier.verify(h,sign))  #将哈希对象和签名字符串作为参数，验证者验证签名是否为真
+
+```
+
