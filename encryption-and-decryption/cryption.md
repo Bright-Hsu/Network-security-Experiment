@@ -79,3 +79,5 @@ encrypt函数在加密的过程中会修改iv的内容，因此iv参数不能是
 在RSA加密算法中，加密算法以公钥PK和待加密的消息M作为输入，输出密文CT，密文![img](C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image010.png)。解密算法以私钥SK和密文CT作为输入，输出消息M。在RSA中，解密算法如下：算法直接输出明文为![img](C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image012.png)。可以看出【公钥加密，私钥解密】是为了让别人用公钥加密数据，然后只有我知道私钥，能把数据解开，私钥起到解密效果，解开被加密的数据。
 
   在RSA数字签名中，签名算法以私钥SK和待签名的消息M作为输入，输出签名![img](https://gitee.com/bright_xu/blog-image/raw/master/202203282117173.png)，签名![img](https://gitee.com/bright_xu/blog-image/raw/master/202203282117175.png)。验证算法以公钥PK，签名![img](file:///C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image014.png)以及消息M作为输入，输出一个比特值b。b=1意味着验证通过，b=0意味着验证不通过。在数字签名中，验证算法首先计算![img](C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image018.png)，随后对比M'与M，如果相等，则输出b=1，否则输出b=0。可以看出【私钥加密，公钥解密】是为了用私钥加密数据作为签名，然后将数据附带着签名一同发布出去。当别人用公钥解开数据时，就说明签名是我发的，私钥起到认证效果，证明我的身份。
+
+### 3. 书写数字签名的注释，每行都干了些什么？并任意举一个例子使得result=False。
