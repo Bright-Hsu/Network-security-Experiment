@@ -115,3 +115,8 @@ with open('master-private.pem') as f:  #打开私钥文件
 如果在第一次实例化哈希对象和第二次之间，改变n，也就是需要加密的信息，则在最后验证签名的时候，发现哈希值与数字签名sign不对应，就会使得最终的result = false。如下图所示，最开始设置的n初始化为‘This is a test message’，但是之后我在中间改变了n的值为‘This is a fake message’，如图所示：
 
 ![image-20220328211934962](https://gitee.com/bright_xu/blog-image/raw/master/202203282119000.png)
+
+可以看到最终result=false：
+
+![image-20220328212004572](https://gitee.com/bright_xu/blog-image/raw/master/202203282120633.png)
+
