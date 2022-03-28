@@ -71,3 +71,11 @@ encrypt函数在加密的过程中会修改iv的内容，因此iv参数不能是
 ![image-20220328211633292](https://gitee.com/bright_xu/blog-image/raw/master/202203282116356.png)
 
 ### **2.** **RSA【公钥加密，私钥解密】和【私钥加密，公钥解密】算法一样吗？为什么？**
+
+答：不一样。【公钥加密，私钥解密】被用于RSA加密算法，公钥用于对数据进行加密，私钥用于对数据进行解密。而【私钥加密，公钥解密】被用于RSA数字签名，私钥用于对数据进行签名，公钥用于对签名进行验证。下面是二者算法的不同：
+
+  首先我们用密钥生成算法生成公钥和私钥：![img](https://gitee.com/bright_xu/blog-image/raw/master/202203282117703.png)。以安全常数![img](https://gitee.com/bright_xu/blog-image/raw/master/202203282117712.png)作为输入，输出一个公钥PK，和一个私钥SK。安全常数![img](file:///C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image004.png)用于确定这个加密算法的安全性有多高，一般以加密算法使用的质数p的大小有关。越大，质数p一般越大，保证体制有更高的安全性。在RSA中，密钥生成算法如下：算法首先随机产生两个不同大质数p和q，计算N=pq。随后，算法计算欧拉函数 ![img](C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image006.png)，接下来，算法随机选择一个小于![img](C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image008.png)的整数e，并计算e关于![img](file:///C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image008.png)的模反元素。最后得到公钥为PK=(N,e)，私钥为SK=(N,d)。
+
+在RSA加密算法中，加密算法以公钥PK和待加密的消息M作为输入，输出密文CT，密文![img](C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image010.png)。解密算法以私钥SK和密文CT作为输入，输出消息M。在RSA中，解密算法如下：算法直接输出明文为![img](C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image012.png)。可以看出【公钥加密，私钥解密】是为了让别人用公钥加密数据，然后只有我知道私钥，能把数据解开，私钥起到解密效果，解开被加密的数据。
+
+  在RSA数字签名中，签名算法以私钥SK和待签名的消息M作为输入，输出签名![img](https://gitee.com/bright_xu/blog-image/raw/master/202203282117173.png)，签名![img](https://gitee.com/bright_xu/blog-image/raw/master/202203282117175.png)。验证算法以公钥PK，签名![img](file:///C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image014.png)以及消息M作为输入，输出一个比特值b。b=1意味着验证通过，b=0意味着验证不通过。在数字签名中，验证算法首先计算![img](C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image018.png)，随后对比M'与M，如果相等，则输出b=1，否则输出b=0。可以看出【私钥加密，公钥解密】是为了用私钥加密数据作为签名，然后将数据附带着签名一同发布出去。当别人用公钥解开数据时，就说明签名是我发的，私钥起到认证效果，证明我的身份。
