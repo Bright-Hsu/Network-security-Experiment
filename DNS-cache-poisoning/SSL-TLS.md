@@ -46,3 +46,4 @@ Certificate是服务器端配置对应的证书链，用于身份验证与密钥
 
 ### Server发送Server Hello Done
 
+通知客户端 server hello 信息发送结束。
