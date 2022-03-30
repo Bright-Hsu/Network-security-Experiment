@@ -39,3 +39,8 @@ Certificate是服务器端配置对应的证书链，用于身份验证与密钥
 ![image-20220330230342411](https://gitee.com/bright_xu/blog-image/raw/master/202203302303453.png)
 
 ### Server发送Server Key Exchange
+
+表明这里用的是DH协议来交换对称加密的密钥。
+
+![image-20220330230411366](https://gitee.com/bright_xu/blog-image/raw/master/202203302304404.png)
+
