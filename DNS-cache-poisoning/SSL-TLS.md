@@ -47,3 +47,6 @@ Certificate是服务器端配置对应的证书链，用于身份验证与密钥
 ### Server发送Server Hello Done
 
 通知客户端 server hello 信息发送结束。
+
+![image-20220330230555129](https://gitee.com/bright_xu/blog-image/raw/master/202203302305185.png)
+
