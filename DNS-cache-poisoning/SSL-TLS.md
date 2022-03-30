@@ -44,3 +44,5 @@ Certificate是服务器端配置对应的证书链，用于身份验证与密钥
 
 ![image-20220330230411366](https://gitee.com/bright_xu/blog-image/raw/master/202203302304404.png)
 
+### Server发送Server Hello Done
+
