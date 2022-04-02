@@ -82,7 +82,9 @@ Server用Change Cipher Spec用来告知服务器，接下来发的消息要用�
 
 ### 11. 双方互相发送Application Data
 
+开始使用协商密钥与算法进行加密通信。Client解密出信息后便知道已经和服务器建立好连接了，之后便开始发送Application Data。Server返回给它对应的加密信息。
 
+![image-20220402225323371](https://gitee.com/bright_xu/blog-image/raw/master/202204022253426.png)
 
 ## 概述
 
