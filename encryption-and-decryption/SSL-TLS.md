@@ -74,9 +74,15 @@ Server用Change Cipher Spec用来告知服务器，接下来发的消息要用�
 
 ![image-20220402225204577](https://gitee.com/bright_xu/blog-image/raw/master/202204022252629.png)
 
-\1. Server发送Finished
+### 10. Server发送Finished
 
 与client发送Finished计算方法一致。server发送的Finished里包含hash给client，client会进行校验，如果通过，说明握手过程中的数据没有被第三方篡改过，也说明server是之前交换证书的拥有者。现在双方就可以开始后续通信，进入Application context了。
+
+![image-20220402225234834](https://gitee.com/bright_xu/blog-image/raw/master/202204022252887.png)
+
+### 11. 双方互相发送Application Data
+
+
 
 ## 概述
 
