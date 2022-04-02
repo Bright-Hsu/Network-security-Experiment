@@ -66,6 +66,12 @@ Change Cipher Spec用来告知服务器，接下来发的消息要用之前协�
 
 客户端发送finished表明已经将握手信息加密好了。客户端将之前发送的所有握手消息存入handshake messages缓存，进行hash运算，再与前面的master secret和一串常量"client finished"进行PRF伪随机运算得到12字节的verify data，还要经过改进的SHA256计算得到加密信息。
 
+![image-20220402224954092](https://gitee.com/bright_xu/blog-image/raw/master/202204022249180.png)
+
+### 9. Server发送Change Cipher Spec
+
+
+
 ## 概述
 
 SSL：（Secure Socket Layer，安全套接字层），位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。其中SSL握手协议层又分为SSL握手协议、SSL密钥更改协议和SSL警告协议。
