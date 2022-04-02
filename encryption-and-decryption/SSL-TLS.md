@@ -8,7 +8,7 @@
 
 接下来详细分析每个包的含义：
 
-### Client发送Client Hello
+### 1. Client发送Client Hello
 
 client发起请求，以明文传输请求信息Client Hello，包中包含的信息有Version（版本信息）、random（随机数）、session ID Length（是否有保存会话）、Cipher Suites（加密套件）、compression methods（压缩算法候选列表）、Extension（扩展字段）等信息。相关信息如下：
 
@@ -24,7 +24,7 @@ client发起请求，以明文传输请求信息Client Hello，包中包含的�
 
 ![image-20220330225320142](https://gitee.com/bright_xu/blog-image/raw/master/202203302253194.png)
 
-### Server发送Server Hello
+### 2. Server发送Server Hello
 
 Server hello是服务端server返回协商的信息结果，包中的信息包括选择使用的协议版本 version，选择的加密套件 cipher suite，选择的压缩算法 compression method、随机数 random 等，其中随机数用于后续的密钥协商。
 
@@ -32,23 +32,29 @@ Server hello是服务端server返回协商的信息结果，包中的信息包�
 
 ![image-20220330225528366](https://gitee.com/bright_xu/blog-image/raw/master/202203302255423.png)
 
-### Server发送Certificate
+### 3. Server发送Certificate
 
 Certificate是服务器端配置对应的证书链，用于身份验证与密钥交换。server的证书信息，只包含public key，server将该public key对应的private key保存好，用于证明server是该证书的实际拥有者。
 
 ![image-20220330230342411](https://gitee.com/bright_xu/blog-image/raw/master/202203302303453.png)
 
-### Server发送Server Key Exchange
+### 4. Server发送Server Key Exchange
 
 表明这里用的是DH协议来交换对称加密的密钥。
 
 ![image-20220330230411366](https://gitee.com/bright_xu/blog-image/raw/master/202203302304404.png)
 
-### Server发送Server Hello Done
+### 5. Server发送Server Hello Done
 
 通知客户端 server hello 信息发送结束。
 
 ![image-20220330230555129](https://gitee.com/bright_xu/blog-image/raw/master/202203302305185.png)
+
+### 6. Client发送Client Key Exchange
+
+这里也是表明用DH协议来交换对称加密的密钥。
+
+
 
 ## 概述
 
