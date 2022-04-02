@@ -56,6 +56,16 @@ Certificate是服务器端配置对应的证书链，用于身份验证与密钥
 
 ![image-20220402224724711](https://gitee.com/bright_xu/blog-image/raw/master/202204022247853.png)
 
+### 7. Client发送Change Cipher Spec
+
+
+
+
+
+
+
+
+
 ## 概述
 
 SSL：（Secure Socket Layer，安全套接字层），位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。其中SSL握手协议层又分为SSL握手协议、SSL密钥更改协议和SSL警告协议。
