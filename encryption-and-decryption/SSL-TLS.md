@@ -58,9 +58,9 @@ Certificate是服务器端配置对应的证书链，用于身份验证与密钥
 
 ### 7. Client发送Change Cipher Spec
 
+Change Cipher Spec用来告知服务器，接下来发的消息要用之前协商好的加密套件进行加密。
 
-
-
+![image-20220402224913845](https://gitee.com/bright_xu/blog-image/raw/master/202204022249923.png)
 
 
 
