@@ -54,7 +54,7 @@ Certificate是服务器端配置对应的证书链，用于身份验证与密钥
 
 这里也是表明用DH协议来交换对称加密的密钥。
 
-
+![image-20220402224724711](https://gitee.com/bright_xu/blog-image/raw/master/202204022247853.png)
 
 ## 概述
 
