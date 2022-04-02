@@ -70,6 +70,8 @@ Change Cipher Spec用来告知服务器，接下来发的消息要用之前协�
 
 ### 9. Server发送Change Cipher Spec
 
+Server用Change Cipher Spec用来告知服务器，接下来发的消息要用之前协商好的加密套件进行加密。
+
 
 
 ## 概述
