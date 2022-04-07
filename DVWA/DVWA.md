@@ -62,7 +62,7 @@ SQL Injection（SQL注入）是发生在 Web 程序中数据库层的安全漏�
 
 点击clear先清除自动标记的参数，然后手动选中密码，按add标记参数，如下图所示。
 
-![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image010.png)
+![image-20220407235606860](https://gitee.com/bright_xu/blog-image/raw/master/202204072356969.png)
 
 然后点击payload标签，在simple list中添加字典，随便填加几个，添加完成后点击start attack。然后查看结果，发现有一个包返回的长度跟别的都不一样，就是爆破正确的密码。从下图可以看出，密码就是password。
 
