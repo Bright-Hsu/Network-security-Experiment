@@ -54,7 +54,7 @@ SQL Injection（SQL注入）是发生在 Web 程序中数据库层的安全漏�
 
   参数列表如下，此时是安全等级是low：
 
-![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image006.png)
+![image-20220407235537952](https://gitee.com/bright_xu/blog-image/raw/master/202204072355993.png)
 
 然后点击action 选择 send to Intruder ,将包发送到Intruder模块，准备构造爆破包。该模块默认会将所有参数自动标记，我们在low模式下只需要爆破密码。首先看到自动标记的参数如下：
 
