@@ -46,11 +46,11 @@ SQL Injection（SQL注入）是发生在 Web 程序中数据库层的安全漏�
 
 然后访问127.0.0.1/DVWA/vulnerabilities/brute/index.php,可以看到xampp拦截到了下列包。
 
-![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png)
+![image-20220407235442251](https://gitee.com/bright_xu/blog-image/raw/master/202204072354382.png)
 
 接下来随便填写一个账号密码，这里输入账号abcd，密码12345，然后提交登录，软件拦截到了包，并且发现账号和密码是明文传输的，可以直接抓取到：
 
-![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](C:/Users/DELL/AppData/Local/Temp/msohtmlclip1/01/clip_image004.png)
+![image-20220407235507282](https://gitee.com/bright_xu/blog-image/raw/master/202204072355319.png)
 
   参数列表如下，此时是安全等级是low：
 
