@@ -88,6 +88,7 @@ encrypt函数在加密的过程中会修改iv的内容，因此iv参数不能是
 n = b'This is a test message'   #要加密的信息
 h = SHA.new()   #SHA是安全哈希函数，实例化一个h对象
 h.update(n)     #对n进行哈希映射
+
 print('Hash:',h.hexdigest(),'length:',len(h.hexdigest())*4)    #打印16进制的字符串，并输出其长度
 
 sign_txt = 'sign.txt'  #用sign_txt表示签名文件
