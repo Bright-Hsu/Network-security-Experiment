@@ -44,7 +44,7 @@ SQL Injection（SQL注入）是发生在 Web 程序中数据库层的安全漏�
 
 首先，我们修改了浏览器的代理ip，ip为127.0.0.1，端口为8080。同时将No proxy for 中的内容删去。
 
-然后访问127.0.0.1/DVWA/vulnerabilities/brute/index.php,可以看到xampp拦截到了下列包。
+然后访问`127.0.0.1/DVWA/vulnerabilities/brute/index.php`,可以看到xampp拦截到了下列包。
 
 ![image-20220407235442251](https://gitee.com/bright_xu/blog-image/raw/master/202204072354382.png)
 
