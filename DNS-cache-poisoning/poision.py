@@ -5,8 +5,6 @@ from scapy.utils import PcapReader
 
 import threading
 import random
-
-
 import time
 import re
 
