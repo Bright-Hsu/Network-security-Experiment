@@ -12,7 +12,7 @@ def arpspoof(target,ip)
 
 def main():
     if len(sys.argv)!=3:
-        print "请输入正确的参数"
+        print "请输入正确的参数！"
         sys.exit()
 
     target=str(sys.argv[1]).strip()
