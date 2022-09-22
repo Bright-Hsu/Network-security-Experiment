@@ -22,7 +22,6 @@ with open('master-public.pem', 'wb') as f:
   f.write(public_pem)
 
 
-#%%
 import base64
 message = b"hello, this is a plian text"
 with open('master-public.pem') as f:
